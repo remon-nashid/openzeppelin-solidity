@@ -30,8 +30,13 @@ async function shouldFail (promise) {
   await shouldFailWithMessage(promise);
 }
 
+async function withMessage (promise, message) {
+  await shouldFailWithMessage(promise, message);
+}
+
 shouldFail.reverting = reverting;
 shouldFail.throwing = throwing;
 shouldFail.outOfGas = outOfGas;
+shouldFail.withMessage = withMessage;
 
 module.exports = shouldFail;
